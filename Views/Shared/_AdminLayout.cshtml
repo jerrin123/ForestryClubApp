@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+
+    <link href="~/Content/css/Admin.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="top-bar">
+        <button class="logout-button">Logout</button>
+    </div>
+    <div class="sidebar">
+        <h3>ADMIN</h3>
+        <a class="active" href="@Url.Action("AdminDash","AdminTables")">Home</a>
+        <a href="@Url.Action("Index","Users")">Users</a>
+        <a href="@Url.Action("Index","Categories")">Categories</a>
+        <a href="@Url.Action("Index","House_Table")">Houses</a>
+        <a href="@Url.Action("Index","Contact_Table")">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+
+    @RenderBody()
+
+
+</body>
+</html>
+
+
+

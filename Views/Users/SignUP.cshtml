@@ -1,0 +1,97 @@
+﻿@model ForestryClubApp.Models.User
+
+@{
+    ViewBag.Title = "SignUP";
+
+
+}
+
+<style>
+    /* Style for the form container */
+    .form-container {
+        max-width: 400px; /* Adjust the maximum width as needed */
+        margin: 0 auto; /* Center-align the form */
+        border: 1px solid #ccc; /* Add a border to the form */
+        padding: 20px; /* Add some padding for better aesthetics */
+    }
+
+    /* Style for the form labels */
+    .form-horizontal label {
+        margin-bottom: 10px; /* Add some space between labels and inputs */
+    }
+
+    /* Style for the form inputs */
+    .form-horizontal input {
+        width: 100%; /* Make the inputs fill the container */
+    }
+
+    /* Style for the submit button */
+    .form-horizontal .btn-default {
+        background-color: #007bff; /* Change the button background color */
+        color: #fff; /* Change the button text color */
+    }
+</style>
+div>
+<img src="data:image/jpeg;base64,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" / width="100%">
+</div>
+<center>
+
+    <h2>SignUp</h2>
+</center>
+
+
+@using (Html.BeginForm("SignUP", "Users"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserEmail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserPassword, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserDepartment, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserDepartment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserDepartment, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to Login", "Login")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

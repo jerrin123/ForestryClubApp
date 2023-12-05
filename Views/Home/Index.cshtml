@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    
+
+}
+<html>
+<head>
+    <style>
+
+        .carousel-caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="~/Content/images/1276442.jpg" alt="First slide" width="100%">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+                    <h1>Welcome</h1>
+                    <h1>Explore, Conserve, Grow: Your Gateway to Forestry Excellence</h1>
+
+                    <a href="#" class="btn btn-primary">About Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- About Us Section -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>About Us</h1>
+                <p style="text-align:justify; font-size:large;">
+                    The Forestry Club was registered (Reg. No. SFPTA-42/17-18) under the auspices of Kerala State Forest and Wildlife Department, and started functioning in the college with the participation of students and faculty members. The club aims to sensitize the student community about the forest wealth, the importance of its conservation and to educate the society about forest conservation. “Look deep into nature and then you will understand everything better” by Albert Einstein is the motto of the club.
+                </p>
+                <p style="text-align: justify; font-size: large;">
+                    Our mission is to empower individuals with the knowledge and skills needed to become stewards of the environment. Through educational initiatives, hands-on experiences, and community engagement, we strive to raise awareness about the importance of forestry and foster a sense of responsibility towards our natural resources.
+
+                </p>
+                <a href="@Url.Action("About","Home")" class="btn btn-primary">Learn More</a>
+
+            </div>
+            <div class="col-md-6">
+                <!-- Include an image on the right side -->
+                <img src="https://wallpapershome.com/images/wallpapers/deer-1280x720-cute-animals-forest-4575.jpg" alt="Image" class="img-fluid rounded" height="605px">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--gallery-starts-->
+    <div class="about">
+        <div class="container">
+            <div class="about-top grid-1">
+                <div class="col-md-4 about-left">
+                    <figure class="effect-bubba">
+                        <img class="img-responsive" src="~/Content/images/636963703709529045slOPoE.jpg" alt="" />
+                        <figcaption>
+                            <h2>Forest Visit</h2>
+                            <p>Thenmala Forest </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 about-left">
+                    <figure class="effect-bubba">
+                        <img class="img-responsive" src="~/Content/images/download.jpeg" alt="" />
+                        <figcaption>
+                            <h4>Special Species</h4>
+                            <p>Special One from Butterfly Familiy</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 about-left">
+                    <figure class="effect-bubba">
+                        <img class="img-responsive" src="~/Content/images/forest.jpg" alt="" />
+                        <figcaption>
+                            <h4>Forest Visit 2023</h4>
+                            <p>Delhi Forest Top View</p>
+                        </figcaption>
+                    </figure>
+                </div>
+
+
+
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!--gallery-end-->
+    <!--End ABout-->
+
+
+
+
+
+</body>
+</html>

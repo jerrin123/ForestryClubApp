@@ -1,0 +1,101 @@
+﻿@model IEnumerable<ForestryClubApp.Models.House_Table>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<head>
+    <style>
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        th {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            color: #4CAF50; /* Green */
+        }
+        td {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            color:black;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+            .btn:hover {
+                background-color: #0069d9;
+            }
+    </style>
+
+</head>
+<center>
+    <h2>HOUSE</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { style = "color: white; background-color: orange; padding: 10px; text-decoration: none; border-radius: 5px;" })
+    </p>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.House_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.House_Leader)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Batch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.Category_name)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.House_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.House_Leader)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Batch)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.Category_name)
+                </td>
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.House_id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.House_id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.House_id })
+                    </td>*@
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.House_id }, new { style = "color: white; background-color: blue; padding: 5px; text-decoration: none; margin-right: 5px;" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.House_id }, new { style = "color: white; background-color: green; padding: 5px; text-decoration: none; margin-right: 5px;" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.House_id }, new { style = "color: white; background-color: red; padding: 5px; text-decoration: none; margin-right: 5px;" })
+                </td>
+
+            </tr>
+        }
+
+    </table>
+
+</center>

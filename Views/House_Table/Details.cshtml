@@ -1,0 +1,51 @@
+﻿@model ForestryClubApp.Models.House_Table
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>House_Table</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.House_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.House_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.House_Leader)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.House_Leader)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Batch)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Batch)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Category_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Category_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.House_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

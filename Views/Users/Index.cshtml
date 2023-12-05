@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ForestryClubApp.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<center>
+    <h2>User Details</h2>
+
+    <p>
+        @*@Html.ActionLink("Create New", "Create")*@
+    </p>
+    </center>
+<br />
+    <table class="table" style="border-collapse: collapse; width: 100%; margin-top: 20px;">
+        <tr style="background-color: #007bff; color: #fff;">
+            <th style="border: 1px solid #ddd; padding: 8px;">
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th style="border: 1px solid #ddd; padding: 8px;">
+                @Html.DisplayNameFor(model => model.UserEmail)
+            </th>
+            @*<th style="border: 1px solid #ddd; padding: 8px;">
+                    @Html.DisplayNameFor(model => model.UserPassword)
+                </th>*@
+            <th style="border: 1px solid #ddd; padding: 8px;">
+                @Html.DisplayNameFor(model => model.UserDepartment)
+            </th>
+            <th style="border: 1px solid #ddd; padding: 8px;"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr style="border: 1px solid #ddd;">
+                <td style="border: 1px solid #ddd; padding: 8px;">
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td style="border: 1px solid #ddd; padding: 8px;">
+                    @Html.DisplayFor(modelItem => item.UserEmail)
+                </td>
+                @*<td style="border: 1px solid #ddd; padding: 8px;">
+            @Html.DisplayFor(modelItem => item.UserPassword)
+        </td>*@
+                <td style="border: 1px solid #ddd; padding: 8px;">
+                    @Html.DisplayFor(modelItem => item.UserDepartment)
+                </td>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                    @*<button type="button" onclick="location.href='@Url.Action("Edit", new { id = item.UserId })'" class="btn btn-primary" style="margin-right: 5px;">Edit</button>*@
+                    <button type="button" onclick="location.href='@Url.Action("Details", new { id = item.UserId })'" class="btn btn-success" style="margin-right: 5px;">Details</button>
+                    <button type="button" onclick="location.href='@Url.Action("Delete", new { id = item.UserId })'" class="btn btn-danger">Delete</button>
+                </td>
+
+
+
+            </tr>
+        }
+
+    </table>
+    <br />
+    <br />
+
+    <center>
+        <a href="@Url.Action("AdminDash", "AdminTables")" style="display: inline-block; padding: 10px 20px; font-size: 16px; text-align: center; text-decoration: none; background-color: #007bff; color: white; border: 1px solid #007bff; border-radius: 5px; transition: background-color 0.3s ease;">Back To Dashboard</a>
+    </center>

@@ -1,0 +1,146 @@
+﻿@model ForestryClubApp.Models.Contact_Table
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "Contact_Table", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <img src="https://www.netlabindia.com/wp-content/uploads/2018/06/contact-us-banner.jpg" />
+    </div>
+
+    <div class="form-horizontal">
+
+       
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Person_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Person_Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter your full name" } })
+                @Html.ValidationMessageFor(model => model.Person_Name, "", new { @class = "text-danger" })
+            </div>
+
+
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Person_Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Person_Email, new { htmlAttributes = new { @class = "form-control", type = "email", placeholder = "Enter your email address" } })
+                @Html.ValidationMessageFor(model => model.Person_Email, "", new { @class = "text-danger" })
+            </div>
+
+
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Person_Mobile, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Person_Mobile, new { htmlAttributes = new { @class = "form-control", type = "tel", placeholder = "Enter your phone number" } })
+                @Html.ValidationMessageFor(model => model.Person_Mobile, "", new { @class = "text-danger" })
+            </div>
+
+
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Department, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Department, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter your department" } })
+                @Html.ValidationMessageFor(model => model.Department, "", new { @class = "text-danger" })
+            </div>
+
+
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Batch, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Batch, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter your batch" } })
+                @Html.ValidationMessageFor(model => model.Batch, "", new { @class = "text-danger" })
+            </div>
+
+
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Message, new { htmlAttributes = new { @class = "form-control", rows = "5", placeholder = "Enter your message" } })
+                @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+            </div>
+
+
+        </div>
+
+
+
+        <div class="form-group">
+
+
+            <div class="col-md-offset-2 col-md-10">
+
+
+                <input type="submit"
+                       value="Submit"
+                       class="btn btn-primary" />
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+}
+
+
+<!--map-start-->
+<div class="mapouter"><div class="gmap_canvas"><iframe src="https://maps.google.com/maps?q=macfast&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" style="width: 430px; height: 400px;"></iframe>
+<style>
+    .mapouter {
+        position: relative;
+        height: 400px;
+        width: 900px;
+        background: #fff;
+    }
+
+    .maprouter a {
+        color: #fff !important;
+        position: absolute !important;
+        top: 0 !important;
+        z-index: 0 !important;
+    }
+</style><a href="https://blooketjoin.org/">blooket</a>
+<style>
+    .gmap_canvas {
+        overflow: hidden;
+        height: 400px;
+        width: 430px
+    }
+
+        .gmap_canvas iframe {
+            position: relative;
+            z-index: 2
+        }
+</style></div></div>
+<!--map-end-->
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
