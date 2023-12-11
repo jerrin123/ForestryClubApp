@@ -48,6 +48,7 @@ namespace ForestryClubApp.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
